@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">   
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Happy New Year 2025</title>
+</head>
+<body>
+    <div class="wrapper" id="audioTrigger">
+        <h1>Thời gian chỉ còn...</h1>
+        <div class="box-time">
+            <div class="time">
+                <p>Ngày</p>
+                <span id="days">day</span>
+            </div>
+            <div class="time">
+                <p>Giờ</p>
+                <span id="hours">hours</span>
+            </div>
+            <div class="time">
+                <p>Phút</p>
+                <span id="minutes">minute</span>
+            </div>
+            <div class="time">
+                <p>Giây</p>
+                <span id="seconds">seconds</span>
+            </div>
+        </div>
+    </div>
+
+    <body>
+        <audio id="myAudio" autoplay muted>
+            <source src="image/nhac.mp3" type="audio/mpeg">
+        </audio>
+        
+        <script>
+            // Xác minh phần tử âm thanh có tồn tại
+            const audio = document.getElementById("myAudio");
+            if (audio) {
+                // Tương tác người dùng để bật âm thanh
+                document.body.addEventListener("click", function () {
+                    if (audio.muted) {
+                        audio.muted = false; // Bật âm lượng
+                        audio.play(); // Phát lại nếu cần
+                        console.log("Âm thanh đã bật.");
+                    }
+                });
+            } else {
+                console.error("Không tìm thấy phần tử âm thanh.");
+            }
+        </script>        
+    </body>
+
+    <script src="app.js"></script>
+</body>
+</html>
